@@ -1,0 +1,26 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1"
+    },
+    "exported_at": "2020-03-06T22:52:19+08:00",
+    "name": "VC-MP",
+    "author": "service@hcgcloud.com",
+    "description": "Vice City Multiplayer is a modification for Grand Theft Auto: Vice City that\r\nallows players from around the world to join together and play Vice City in\r\nwhatever style they like.",
+    "image": "hcgcloud\/pterodactyl-images:ubuntu_base",
+    "startup": ".\/mpsvrrel64 -port {{SERVER_PORT}}",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"Started VC:MP 0.4\",\r\n    \"userInteraction\": []\r\n}",
+        "logs": "{\r\n    \"custom\": true,\r\n    \"location\": \"server_log.txt\"\r\n}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\napt -y update\r\napt -y --no-install-recommends install curl unzip lib32gcc1 ca-certificates\r\ncd \/tmp\r\ncurl -sSL -o server.zip https:\/\/raw.githubusercontent.com\/hcgcloud\/pterodactyl-vcmp\/master\/server.zip\r\nmkdir -p \/mnt\/server\r\nunzip -o -d \/mnt\/server\/ server.zip\r\ncd \/mnt\/server\r\nchmod -R 744 \/mnt\/server\r\nexport HOME=\/mnt\/server",
+            "container": "ubuntu:16.04",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": []
+}
