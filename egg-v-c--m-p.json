@@ -7,7 +7,7 @@
     "name": "VC-MP",
     "author": "service@hcgcloud.com",
     "description": "Vice City Multiplayer is a modification for Grand Theft Auto: Vice City that\r\nallows players from around the world to join together and play Vice City in\r\nwhatever style they like.",
-    "image": "hcgcloud\/pterodactyl-images:ubuntu_base",
+    "image": "hcgcloud\/pterodactyl-images:ubuntu-base",
     "startup": ".\/mpsvrrel64 -port {{SERVER_PORT}}",
     "config": {
         "files": "{}",
